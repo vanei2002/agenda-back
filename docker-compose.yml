@@ -8,12 +8,8 @@ services:
       - '3000:3000'
     environment:
       PORT: 3000
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_USER: postgres
-      DB_PASSWORD: postgres
-      DATABASE: nest
       NODE_ENV: development
+      DATABASE_URL: postgres://postgres:postgres@db:5432/nest
     depends_on:
       db:
         condition: service_healthy
